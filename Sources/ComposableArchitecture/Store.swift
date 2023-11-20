@@ -418,7 +418,7 @@ public final class Store<State, Action> {
     )
   }
 
-  func invalidate(_ isInvalid: @escaping (State) -> Bool) -> Store {
+  public func invalidate(_ isInvalid: @escaping (State) -> Bool) -> Store {
     self.threadCheck(status: .scope)
     let store: Store = self.reducer.rescope(
       self,
